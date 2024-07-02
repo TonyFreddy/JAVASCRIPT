@@ -6,7 +6,6 @@ const port = 3000;
 
 app.use(bodyParser.json());
 
-// Fonction pour récupérer la liste des articles
 app.get('/posts', async (req, res) => {
   try {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -18,7 +17,7 @@ app.get('/posts', async (req, res) => {
   }
 });
 
-// Fonction pour créer un nouvel article
+
 app.post('/posts', async (req, res) => {
   try {
     const newPost = req.body;
@@ -35,7 +34,7 @@ app.post('/posts', async (req, res) => {
   }
 });
 
-// Fonction pour modifier un article existant
+
 app.put('/posts/:id', async (req, res) => {
   try {
     const id = req.params.id;
@@ -53,7 +52,7 @@ app.put('/posts/:id', async (req, res) => {
   }
 });
 
-// Fonction pour supprimer un article
+
 app.delete('/posts/:id', async (req, res) => {
   try {
     const id = req.params.id;
